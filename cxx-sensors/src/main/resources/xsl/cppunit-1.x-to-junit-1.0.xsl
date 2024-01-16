@@ -4,7 +4,7 @@
 
   <xsl:template match="/">
     <xsl:element name="testsuite" namespace="http://junit.org/junit">
-      <xsl:attribute name="errors" select="TestRun/Statistics/Errors"/
+      <xsl:attribute name="errors" select="TestRun/Statistics/Errors"></xsl:attribute>
         <xsl:value-of select="TestRun/Statistics/Errors"/>
       </xsl:attribute>
 
