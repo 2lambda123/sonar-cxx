@@ -3,12 +3,12 @@
   <xsl:output method="xml" indent="yes"/>
 
   <xsl:template match="/">
-    <xsl:element name="testsuite">
-      <xsl:attribute name="errors">
+    <xsl:element name="testsuite" namespace="http://junit.org/junit">
+      <xsl:attribute name="errors" select="TestRun/Statistics/Errors"/
         <xsl:value-of select="TestRun/Statistics/Errors"/>
       </xsl:attribute>
 
-      <xsl:attribute name="failures">
+      <xsl:attribute name="failures" select="TestRun/Statistics/Failures"/
         <xsl:value-of select="TestRun/Statistics/Failures"/>
       </xsl:attribute>
 
@@ -116,7 +116,8 @@
           </xsl:element>
 
           <xsl:element name="system-err">
-            <xsl:text>+</xsl:text>
+            <xsl:text>
+</xsl:text>
             <xsl:text>[File] - </xsl:text><xsl:value-of select="Location/File"/>
             <xsl:text>+</xsl:text>
             <xsl:text>[Line] - </xsl:text><xsl:value-of select="Location/Line"/>
