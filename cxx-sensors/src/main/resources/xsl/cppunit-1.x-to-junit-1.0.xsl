@@ -28,7 +28,7 @@
 
   <xsl:template match="/TestRun/FailedTests/FailedTest">
     <xsl:call-template name="failureOrErrorTestCase"/>
-  </xsl:template>
+    </xsl:template>
 
   <xsl:template match="/TestRun/FailedTests/Test">
     <xsl:call-template name="failureOrErrorTestCase"/>
@@ -145,7 +145,8 @@
             <xsl:text>
 +</xsl:text>
           </xsl:element>
-        </xsl:otherwise>
+        <!-- Removing contents of failureOrErrorTestCase -->
+      </xsl:otherwise>
       </xsl:choose>
     </xsl:element>
   </xsl:template>
