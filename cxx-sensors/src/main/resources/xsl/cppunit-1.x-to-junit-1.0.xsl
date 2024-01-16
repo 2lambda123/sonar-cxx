@@ -5,6 +5,7 @@
   <xsl:template match="/">
     <xsl:element name="testsuite" namespace="http://junit.org/junit">
       <xsl:attribute name="errors" select="TestRun/Statistics/Errors"></xsl:attribute>
+      </xsl:attribute>
         <xsl:value-of select="TestRun/Statistics/Errors"/>
       </xsl:attribute>
 
@@ -32,8 +33,6 @@
   <xsl:template match="/TestRun/FailedTests/Test">
     <xsl:call-template name="failureOrErrorTestCase"/>
   </xsl:template>
-
-
   <xsl:template name="successTestCase">
 
     <xsl:element name="testcase">
@@ -119,9 +118,11 @@
             <xsl:text>
 </xsl:text>
             <xsl:text>[File] - </xsl:text><xsl:value-of select="Location/File"/>
-            <xsl:text>+</xsl:text>
+            <xsl:text>
++</xsl:text>
             <xsl:text>[Line] - </xsl:text><xsl:value-of select="Location/Line"/>
-            <xsl:text>+</xsl:text>
+            <xsl:text>
++</xsl:text>
           </xsl:element>
         </xsl:when>
 
@@ -135,11 +136,14 @@
             </xsl:attribute>
           </xsl:element>
           <xsl:element name="system-err">
-            <xsl:text>+</xsl:text>
+            <xsl:text>
++</xsl:text>
             <xsl:text>[File] - </xsl:text><xsl:value-of select="Location/File"/>
-            <xsl:text>+</xsl:text>
+            <xsl:text>
++</xsl:text>
             <xsl:text>[Line] - </xsl:text><xsl:value-of select="Location/Line"/>
-            <xsl:text>+</xsl:text>
+            <xsl:text>
++</xsl:text>
           </xsl:element>
         </xsl:otherwise>
       </xsl:choose>
