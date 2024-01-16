@@ -9,7 +9,7 @@
         <xsl:value-of select="TestRun/Statistics/Errors"/>
       </xsl:attribute>
 
-      <xsl:attribute name="failures" select="TestRun/Statistics/Failures"/
+      <xsl:attribute name="failures" select="TestRun/Statistics/Failures"</xsl:attribute>
         <xsl:value-of select="TestRun/Statistics/Failures"/>
       </xsl:attribute>
 
